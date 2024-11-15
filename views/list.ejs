@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <div class="box" id="heading">
+      <h1> <%= listoftitle %> </h1>
+    </div>
+
+    <div class="box">
+      <!-- Loop through the items and display them -->
+      <% for (var i = 0; i < Listofitems.length; i++) { %>
+        <div class="item">
+          <p class="<%= Listofitems[i].completed ? 'completed' : '' %>">
+            <%= Listofitems[i].task %>
+          </p>
+
+          <!-- Complete / Undo button -->
+          <form action="/<%= listoftitle.toLowerCase() %>/complete" method="POST" style="display:inline;">
+            <input type="hidden" name="index" value="<%= i %>">
+            <button type="submit">
+              <%= Listofitems[i].completed ? 'Undo' : 'Complete' %>
+            </button>
+          </form>
+
+          <!-- Delete button -->
+          <form action="/<%= listoftitle.toLowerCase() %>/delete" method="POST" style="display:inline;">
+            <input type="hidden" name="index" value="<%= i %>">
+            <button type="submit">Delete</button>
+          </form>
+        </div>
+      <% } %>
+
+      <!-- Form to add a new task -->
+      <form action="/" method="post">
+        <input type="text" name="newitem" placeholder="New Item" autocomplete="off" required>
+        <button type="submit" name="list" value="<%= listoftitle %>">+</button>
+      </form>
+
+      <!-- Clear all button -->
+      <form action="/<%= listoftitle.toLowerCase() %>/clear" method="POST" style="margin-top: 10px;">
+        <button type="submit">Clear All</button>
+      </form>
+    </div>
+  </body>
+</html>

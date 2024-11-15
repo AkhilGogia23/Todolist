@@ -1,0 +1,188 @@
+/* General HTML styles */
+html {
+  background-color: #E4E9FD;
+  background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
+  min-height: 100vh;
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #fff;
+  padding: 15px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.box {
+  max-width: 500px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+#heading {
+  background-color: #A683E3;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 20px;
+}
+
+/* Styling for task items */
+.item {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #F1F1F1;
+  padding: 15px 0;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+input:checked + p {
+  text-decoration: line-through;
+  text-decoration-color: #A683E3;
+}
+
+input[type="checkbox"] {
+  margin: 0 15px;
+}
+
+p {
+  margin: 0;
+  font-size: 18px;
+  color: #00204a;
+  font-weight: 400;
+}
+
+/* Form Styles */
+form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 300;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #A683E3;
+  box-shadow: 0 0 5px rgba(166, 131, 227, 0.5);
+}
+
+::placeholder {
+  color: #bbb;
+}
+
+/* Button Styles */
+button {
+  min-height: 40px;
+  width: 120px;
+  border-radius: 25px;
+  border-color: transparent;
+  background-color: #A683E3;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #8b5fb6;
+}
+
+button.complete {
+  background-color: #66FCF1;
+}
+
+button.complete:hover {
+  background-color: #45A29E;
+}
+
+button.delete {
+  background-color: #FF6F61;
+}
+
+button.delete:hover {
+  background-color: #FF4A3B;
+}
+
+button.add {
+  min-height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #66FCF1;
+  color: #fff;
+  font-size: 35px;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+button.add:hover {
+  background-color: #45A29E;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #A683E3;
+}
+
+footer a {
+  color: #A683E3;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .box {
+    max-width: 90%;
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+
+  button {
+    min-height: 35px;
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  button.add {
+    font-size: 30px;
+  }
+}
